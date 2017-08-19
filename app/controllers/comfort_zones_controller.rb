@@ -1,6 +1,7 @@
 class ComfortZonesController < ApplicationController
   def index
-    @comfort_zones = ComfortZone.page(params[:page]).per(10)
+    @q = ComfortZone.ransack(params[:q])
+    @comfort_zones = @q.result(:distinct => true).includes(:outfits).page(params[:page]).per(10)
 
     render("comfort_zones/index.html.erb")
   end

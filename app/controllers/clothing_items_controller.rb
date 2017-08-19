@@ -1,6 +1,7 @@
 class ClothingItemsController < ApplicationController
   def index
-    @clothing_items = ClothingItem.page(params[:page]).per(10)
+    @q = ClothingItem.ransack(params[:q])
+    @clothing_items = @q.result(:distinct => true).includes(:outfit_boms).page(params[:page]).per(10)
 
     render("clothing_items/index.html.erb")
   end
