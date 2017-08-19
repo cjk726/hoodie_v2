@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Outfit_item resource:
+  # CREATE
+  get "/outfit_items/new", :controller => "outfit_items", :action => "new"
+  post "/create_outfit_item", :controller => "outfit_items", :action => "create"
+
+  # READ
+  get "/outfit_items", :controller => "outfit_items", :action => "index"
+  get "/outfit_items/:id", :controller => "outfit_items", :action => "show"
+
+  # UPDATE
+  get "/outfit_items/:id/edit", :controller => "outfit_items", :action => "edit"
+  post "/update_outfit_item/:id", :controller => "outfit_items", :action => "update"
+
+  # DELETE
+  get "/delete_outfit_item/:id", :controller => "outfit_items", :action => "destroy"
+  #------------------------------
+
   # Routes for the Outfit resource:
   # CREATE
   get "/outfits/new", :controller => "outfits", :action => "new"
