@@ -24,7 +24,7 @@
           Outfit
         </label>
 
-        <input type="text" id="outfit_id" name="outfit_id" placeholder="Outfit" class="form-control" value="<%= @outfit_item.outfit_id %>">
+        <%= select_tag(:outfit_id, options_from_collection_for_select(Outfit.all, :id, :user_id, @outfit_item.outfit_id), :class => "form-control") %>
       </div>
 
       <!-- Label and input for clothing_item_id -->
