@@ -16,7 +16,7 @@
 
       <% @outfit_items.each do |outfit_item| %>
       <tr>
-        <td><%= outfit_item.outfit_id %></td>
+        <td><%= outfit_item.outfit.user_id %></td>
         <td><%= outfit_item.clothing_item_id %></td>
         <td>
           <a href="/outfit_items/<%= outfit_item.id %>" class="btn btn-primary">Show</a>
