@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root :to => "outfits#index"
   # Routes for the Comfort_zone resource:
   # CREATE
   get "/comfort_zones/new", :controller => "comfort_zones", :action => "new"
