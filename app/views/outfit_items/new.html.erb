@@ -33,7 +33,7 @@
           Clothing item
         </label>
 
-        <input type="text" id="clothing_item_id" name="clothing_item_id" placeholder="Clothing item" class="form-control" value="<%= @outfit_item.clothing_item_id %>">
+        <%= select_tag(:clothing_item_id, options_from_collection_for_select(ClothingItem.all, :id, :item_name, @outfit_item.clothing_item_id), :class => "form-control") %>
       </div>
 
       <button class="btn btn-success">
