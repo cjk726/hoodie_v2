@@ -10,7 +10,7 @@ class OutfitsController < ApplicationController
   end
 
   def index
-    @outfits = Outfit.all
+    @outfits = current_user.outfits.page(params[:page]).per(10)
 
     render("outfits/index.html.erb")
   end
