@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Comfort_zone resource:
+  # CREATE
+  get "/comfort_zones/new", :controller => "comfort_zones", :action => "new"
+  post "/create_comfort_zone", :controller => "comfort_zones", :action => "create"
+
+  # READ
+  get "/comfort_zones", :controller => "comfort_zones", :action => "index"
+  get "/comfort_zones/:id", :controller => "comfort_zones", :action => "show"
+
+  # UPDATE
+  get "/comfort_zones/:id/edit", :controller => "comfort_zones", :action => "edit"
+  post "/update_comfort_zone/:id", :controller => "comfort_zones", :action => "update"
+
+  # DELETE
+  get "/delete_comfort_zone/:id", :controller => "comfort_zones", :action => "destroy"
+  #------------------------------
+
   # Routes for the Clothing_item resource:
   # CREATE
   get "/clothing_items/new", :controller => "clothing_items", :action => "new"
