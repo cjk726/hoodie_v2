@@ -1,6 +1,9 @@
 class Outfit < ApplicationRecord
   # Direct associations
 
+  belongs_to :comfort_zone,
+             :counter_cache => true
+
   has_many   :outfit_items,
              :dependent => :destroy
 
