@@ -54,6 +54,29 @@
           </div>
         </li>
       <% end %>
+
+      <li class="list-group-item">
+        <form action="/create_outfit" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for user_id -->
+      <input type="hidden" name="user_id" value="<%= current_user.id %>">
+
+      <!-- Label and input for comfort_zone_id -->
+      <div class="form-group">
+        <label for="comfort_zone_id" class="control-label">
+          Comfort zone
+        </label>
+
+        <%= select_tag(:comfort_zone_id, options_from_collection_for_select(ComfortZone.all, :id, :comfort_zone_name), :class => "form-control") %>
+      </div>
+
+      <button class="btn btn-block btn-success">
+        Create Outfit
+      </button>
+    </form>
+      </li>
     </ul>
   </div>
 </div>

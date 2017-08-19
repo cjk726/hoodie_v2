@@ -6,6 +6,7 @@ class ClothingItemsController < ApplicationController
   end
 
   def show
+    @outfit_item = OutfitItem.new
     @clothing_item = ClothingItem.find(params[:id])
 
     render("clothing_items/show.html.erb")

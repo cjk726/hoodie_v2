@@ -16,6 +16,7 @@ class OutfitsController < ApplicationController
   end
 
   def show
+    @outfit_item = OutfitItem.new
     @outfit = Outfit.find(params[:id])
 
     render("outfits/show.html.erb")

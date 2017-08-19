@@ -6,6 +6,7 @@ class ComfortZonesController < ApplicationController
   end
 
   def show
+    @outfit = Outfit.new
     @comfort_zone = ComfortZone.find(params[:id])
 
     render("comfort_zones/show.html.erb")
