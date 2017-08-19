@@ -1,6 +1,6 @@
 class ComfortZonesController < ApplicationController
   def index
-    @comfort_zones = ComfortZone.all
+    @comfort_zones = ComfortZone.page(params[:page]).per(10)
 
     render("comfort_zones/index.html.erb")
   end
