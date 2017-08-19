@@ -16,7 +16,7 @@
 
       <% @outfits.each do |outfit| %>
       <tr>
-        <td><%= outfit.user_id %></td>
+        <td><%= outfit.user.email %></td>
         <td><%= outfit.comfort_zone_id %></td>
         <td>
           <a href="/outfits/<%= outfit.id %>" class="btn btn-primary">Show</a>
