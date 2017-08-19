@@ -16,8 +16,20 @@
 
       <% @outfits.each do |outfit| %>
       <tr>
-        <td><%= outfit.user.email %></td>
-        <td><%= outfit.comfort_zone.comfort_zone_name %></td>
+        <td>
+          <% if outfit.user.present? %>
+            <a href="/users/<%= outfit.user.id %>">
+              <%= outfit.user.email %>
+            </a>
+          <% end %>
+        </td>
+        <td>
+          <% if outfit.comfort_zone.present? %>
+            <a href="/comfort_zones/<%= outfit.comfort_zone.id %>">
+              <%= outfit.comfort_zone.comfort_zone_name %>
+            </a>
+          <% end %>
+        </td>
         <td>
           <a href="/outfits/<%= outfit.id %>" class="btn btn-primary">Show</a>
           

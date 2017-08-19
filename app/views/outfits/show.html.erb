@@ -6,10 +6,22 @@
   <div class="col-md-12 mb-2">
     <dl class="dl-horizontal">
       <dt>User</dt>
-      <dd><%= @outfit.user_id %></dd>
+      <dd>
+        <% if @outfit.user.present? %>
+          <a href="/users/<%= @outfit.user_id %>">
+            <%= @outfit.user.email %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Comfort zone</dt>
-      <dd><%= @outfit.comfort_zone_id %></dd>
+      <dd>
+        <% if @outfit.comfort_zone.present? %>
+          <a href="/comfort_zones/<%= @outfit.comfort_zone_id %>">
+            <%= @outfit.comfort_zone.comfort_zone_name %>
+          </a>
+        <% end %>
+      </dd>
 
     </dl>
 

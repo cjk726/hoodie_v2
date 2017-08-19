@@ -16,8 +16,20 @@
 
       <% @outfit_items.each do |outfit_item| %>
       <tr>
-        <td><%= outfit_item.outfit.user_id %></td>
-        <td><%= outfit_item.clothing_item.item_name %></td>
+        <td>
+          <% if outfit_item.outfit.present? %>
+            <a href="/outfits/<%= outfit_item.outfit.id %>">
+              <%= outfit_item.outfit.user_id %>
+            </a>
+          <% end %>
+        </td>
+        <td>
+          <% if outfit_item.clothing_item.present? %>
+            <a href="/clothing_items/<%= outfit_item.clothing_item.id %>">
+              <%= outfit_item.clothing_item.item_name %>
+            </a>
+          <% end %>
+        </td>
         <td>
           <a href="/outfit_items/<%= outfit_item.id %>" class="btn btn-primary">Show</a>
           <a href="/outfit_items/<%= outfit_item.id %>/edit" class="btn btn-warning">Edit</a>

@@ -6,10 +6,22 @@
   <div class="col-md-12 mb-2">
     <dl class="dl-horizontal">
       <dt>Outfit</dt>
-      <dd><%= @outfit_item.outfit_id %></dd>
+      <dd>
+        <% if @outfit_item.outfit.present? %>
+          <a href="/outfits/<%= @outfit_item.outfit_id %>">
+            <%= @outfit_item.outfit.user_id %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Clothing item</dt>
-      <dd><%= @outfit_item.clothing_item_id %></dd>
+      <dd>
+        <% if @outfit_item.clothing_item.present? %>
+          <a href="/clothing_items/<%= @outfit_item.clothing_item_id %>">
+            <%= @outfit_item.clothing_item.item_name %>
+          </a>
+        <% end %>
+      </dd>
 
     </dl>
 
