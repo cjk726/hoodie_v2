@@ -1,5 +1,7 @@
 ActiveAdmin.register ComfortZone do
 
+ permit_params :comfort_zone_name, :comfort_zone_temp_min
+
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
