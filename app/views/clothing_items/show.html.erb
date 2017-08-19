@@ -23,3 +23,34 @@
     </div>
   </div>
 </div>
+
+<!-- A Clothing item has many outfit_boms -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Outfit Boms
+      </li>
+
+      <% @clothing_item.outfit_boms.each do |outfit_item| %>
+        <li class="list-group-item">
+          <a href="/outfit_items/<%= outfit_item.id %>">
+            <%= outfit_item.outfit_id %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/outfit_items/<%= outfit_item.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/outfit_items/<%= outfit_item.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_outfit_item/<%= outfit_item.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
