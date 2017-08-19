@@ -47,8 +47,6 @@ class OutfitsController < ApplicationController
 
   def update
     @outfit = Outfit.find(params[:id])
-
-    @outfit.user_id = params[:user_id]
     @outfit.comfort_zone_id = params[:comfort_zone_id]
 
     save_status = @outfit.save
