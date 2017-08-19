@@ -17,12 +17,14 @@
       <a href="/outfits" class="btn btn-primary">
         Back
       </a>
-      <a href="/outfits/<%= @outfit.id %>/edit" class="btn btn-warning">
-        Edit
-      </a>
-      <a href="/delete_outfit/<%= @outfit.id %>" class="btn btn-danger" rel="nofollow">
-        Delete
-      </a>
+      <% if current_user == @outfit.user %>
+        <a href="/outfits/<%= @outfit.id %>/edit" class="btn btn-warning">
+          Edit
+        </a>
+        <a href="/delete_outfit/<%= @outfit.id %>" class="btn btn-danger" rel="nofollow">
+          Delete
+        </a>
+      <% end %>
     </div>
   </div>
 </div>
