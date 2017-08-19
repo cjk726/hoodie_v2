@@ -33,7 +33,7 @@
           Comfort zone
         </label>
 
-        <input type="text" id="comfort_zone_id" name="comfort_zone_id" placeholder="Comfort zone" class="form-control" value="<%= @outfit.comfort_zone_id %>">
+        <%= select_tag(:comfort_zone_id, options_from_collection_for_select(ComfortZone.all, :id, :comfort_zone_name, @outfit.comfort_zone_id), :class => "form-control") %>
       </div>
 
       <button class="btn btn-success">
